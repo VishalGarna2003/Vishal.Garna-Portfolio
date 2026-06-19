@@ -1,0 +1,72 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: "Signature";
+  src: local("Caveat"), local("Pacifico");
+}
+
+@theme inline {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Caveat", "Pacifico", cursive;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-mint: var(--mint);
+  --color-peach: var(--peach);
+  --color-sage: var(--sage);
+  --color-orange-accent: var(--orange-accent);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Cream/off-white base from screenshots */
+  --background: oklch(0.985 0.005 120);
+  --sidebar: oklch(0.985 0.005 120);
+  --foreground: oklch(0.18 0.07 275);          /* deep navy */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.07 275);
+  --muted: oklch(0.96 0.005 120);
+  --muted-foreground: oklch(0.5 0.04 270);
+
+  --primary: oklch(0.18 0.07 275);             /* navy buttons */
+  --primary-foreground: oklch(0.98 0.005 120);
+
+  --accent: oklch(0.78 0.12 285);              /* lavender */
+  --accent-foreground: oklch(0.18 0.07 275);
+
+  --orange-accent: oklch(0.72 0.16 50);        /* warm orange */
+  --mint: oklch(0.92 0.05 175);
+  --peach: oklch(0.92 0.06 55);
+  --sage: oklch(0.93 0.05 140);
+
+  --border: oklch(0.9 0.015 270);
+  --ring: oklch(0.78 0.12 285);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { letter-spacing: -0.02em; font-weight: 700; }
+}
